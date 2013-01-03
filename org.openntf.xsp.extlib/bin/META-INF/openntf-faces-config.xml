@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- ******************************************************************* -->
 <!--                                                                     -->
-<!-- © Copyright GBS Inc 2011                                            -->
+<!-- © Copyright OpenNTF 2013                                            -->
 <!--                                                                     -->
 <!-- Licensed under the Apache License, Version 2.0 (the "License");     -->
 <!-- you may not use this file except in compliance with the License.    -->
@@ -26,9 +26,9 @@
     <action-listener>org.openntf.xsp.extlib.listeners.ActionListener</action-listener>
 </application>
   <factory>
-    <application-factory>org.openntf.xsp.extlib.application.StarterApplicationFactory</application-factory>
+    <application-factory>org.openntf.xsp.extlib.application.OpenNTFApplicationFactory</application-factory>
  <lifecycle-factory>org.openntf.xsp.extlib.lifecycle.LifecycleFactory</lifecycle-factory>
-		<faces-context-factory>org.openntf.xsp.extlib.context.StarterFacesContextFactory</faces-context-factory>
+		<faces-context-factory>org.openntf.xsp.extlib.context.OpenNTFFacesContextFactory</faces-context-factory>
   	</factory>
 <lifecycle
 	id="PhaseListener">
@@ -36,30 +36,30 @@
 	</lifecycle>
 <managed-bean
 	id="ApplicationBean">
-		<managed-bean-name>StarterApplication</managed-bean-name>
+		<managed-bean-name>OpenNTFApplication</managed-bean-name>
 		<managed-bean-class>org.openntf.xsp.extlib.beans.ApplicationBean</managed-bean-class>
 		<managed-bean-scope>application</managed-bean-scope>
 	</managed-bean>
 	<managed-bean
 	id="SessionBean">
-		<managed-bean-name>StarterSession</managed-bean-name>
+		<managed-bean-name>OpenNTFSession</managed-bean-name>
 		<managed-bean-class>org.openntf.xsp.extlib.beans.SessionBean</managed-bean-class>
 		<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>
 	<managed-bean
 	id="ViewBean">
-		<managed-bean-name>StarterView</managed-bean-name>
+		<managed-bean-name>OpenNTFView</managed-bean-name>
 		<managed-bean-class>org.openntf.xsp.extlib.beans.ViewBean</managed-bean-class>
 		<managed-bean-scope>view</managed-bean-scope>
 	</managed-bean>
 	<managed-bean
 	id="RequestBean">
-		<managed-bean-name>StarterRequest</managed-bean-name>
+		<managed-bean-name>OpenNTFRequest</managed-bean-name>
 		<managed-bean-class>org.openntf.xsp.extlib.beans.RequestBean</managed-bean-class>
 		<managed-bean-scope>request</managed-bean-scope>
 	</managed-bean>
 	<render-kit>
-	<render-kit-id>StarterKit</render-kit-id>
+	<render-kit-id>OpenNTFKit</render-kit-id>
     <render-kit-class>org.openntf.xsp.extlib.renderkit.OpenNTFRenderKit</render-kit-class>
 			<renderer
 		id="OpenNTFRenderer">
