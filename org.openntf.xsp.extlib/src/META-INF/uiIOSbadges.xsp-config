@@ -22,13 +22,13 @@
 		<default-prefix>openntf</default-prefix>
 	</faces-config-extension>
 		<component>
-		<description>Generates a progress bar</description>
-		<display-name>Progress Bar</display-name>
-		<component-type>org.openntf.xsp.extlib.UIProgress</component-type>
-		<component-class>org.openntf.xsp.extlib.components.UIProgress</component-class>
+		<description>Generates an iOS style notification badge</description>
+		<display-name>iOS Notification Badge</display-name>
+		<component-type>org.openntf.xsp.extlib.UIiOSBadge</component-type>
+		<component-class>org.openntf.xsp.extlib.components.UIiOSBadge</component-class>
 		<component-extension>
-			<tag-name>progress</tag-name>
-			<component-family>org.openntf.xsp.extlib.UIProgress</component-family>
+			<tag-name>iosbadge</tag-name>
+			<component-family>org.openntf.xsp.extlib.UIiIOSBadge</component-family>
 			<designer-extension>
 				<in-palette>true</in-palette>
 				<category>Czarnowski Library</category>
@@ -36,54 +36,61 @@
 			</designer-extension>
 		</component-extension>
 		<property>
-			<description>The type of progress bar</description>
-			<display-name>Progress Bar Type</display-name>
-			<property-name>barType</property-name>
+			<description>The text in the badge</description>
+			<display-name>Badge Text</display-name>
+			<property-name>badgerText</property-name>
 			<property-class>string</property-class>
 			<property-extension>
 				<designer-extension>
-					<category>Progress Bar</category>
-					<editor>com.ibm.workplace.designer.property.editors.comboParameterEditor</editor>
-					<editor-parameter>None&#xd;
-Info&#xd;
-Success&#xd;
-Warning&#xd;
-Danger</editor-parameter>
-					<default-value>None</default-value>
+					<category>iOS Badge</category>
 				</designer-extension>
 				 <required>true</required>
 			</property-extension>
 		</property>
-		<property>
-			<description>
-				The style of the progress bar			
-			</description>
-			<display-name>Progress Bar Style</display-name>
-			<property-name>barStyle</property-name>
-			<property-class>java.lang.String</property-class>
+				<property>
+			<description>Color of badge</description>
+			<display-name>Badge Color</display-name>
+			<property-name>badgerColor</property-name>
+			<property-class>string</property-class>
 			<property-extension>
 				<designer-extension>
-					<category>Progress Bar</category>
-					<editor>com.ibm.workplace.designer.property.editors.comboParameterEditor</editor>
-					<editor-parameter>Plain&#xd;
-Striped&#xd;
-Active</editor-parameter>
-					<default-value>Plain</default-value>
+					<category>iOS Badge</category>
 				</designer-extension>
 				 <required>true</required>
 			</property-extension>
 		</property>
-		
-		<property>
-			<description>
-				The width of the progress bar			
-			</description>
-			<display-name>Progress Bar Width</display-name>
-			<property-name>barWidth</property-name>
-			<property-class>java.lang.String</property-class>
+				<property>
+			<description>The position of the badge</description>
+			<display-name>Badge Position</display-name>
+			<property-name>badgerPosition</property-name>
+			<property-class>string</property-class>
 			<property-extension>
 				<designer-extension>
-					<category>Progress Bar</category>
+					<category>iOS Badge</category>
+				</designer-extension>
+				 <required>true</required>
+			</property-extension>
+		</property>
+				<property>
+			<description>The size of the badge</description>
+			<display-name>Badge Size</display-name>
+			<property-name>badgerSize</property-name>
+			<property-class>string</property-class>
+			<property-extension>
+				<designer-extension>
+					<category>iOS Badge</category>
+				</designer-extension>
+				 <required>true</required>
+			</property-extension>
+		</property>
+				<property>
+			<description>The type of badge</description>
+			<display-name>Badge Type</display-name>
+			<property-name>badgerType</property-name>
+			<property-class>string</property-class>
+			<property-extension>
+				<designer-extension>
+					<category>iOS Badge</category>
 				</designer-extension>
 				 <required>true</required>
 			</property-extension>

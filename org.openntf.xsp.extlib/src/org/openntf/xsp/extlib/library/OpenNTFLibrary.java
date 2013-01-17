@@ -57,7 +57,12 @@ public class OpenNTFLibrary extends AbstractXspLibrary {
 	@Override
 	public String[] getXspConfigFiles() {
 		String[] files = new String[] { "META-INF/openntf.xsp-config",
-				"META-INF/html.xsp-config", "META-INF/canvas.xsp-config" };
+				"META-INF/html.xsp-config",
+				"META-INF/canvas.xsp-config",
+				"META-INF/uiRibbon.xsp-config",
+				"META-INF/uiProgress.xsp-config",
+				"META-INF/uiStackOverflowBadge.xsp-config",
+				"META-INF/uiIOSBadge.xsp-config"};
 
 		return files;
 	}
@@ -66,7 +71,11 @@ public class OpenNTFLibrary extends AbstractXspLibrary {
 	public String[] getFacesConfigFiles() {
 		String[] files = new String[] { "META-INF/openntf-faces-config.xml",
 				"META-INF/html-faces-config.xml",
-				"META-INF/canvas-faces-config.xml" };
+				"META-INF/canvas-faces-config.xml",
+				"META-INF/uiRibbon-faces-config.xml",
+				"META-INF/uiProgress-faces-config.xml",
+				"META-INF/uiStackOverflowBadge-faces-config.xml",
+				"META-INF/uiIOSBadge-faces-config.xml"};
 		return files;
 	}
 

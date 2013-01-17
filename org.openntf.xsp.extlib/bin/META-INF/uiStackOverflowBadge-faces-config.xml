@@ -18,10 +18,10 @@
 	<!-- ******************************************************************* -->
 <faces-config>
 	<render-kit>		
-		<renderer id="ProgressBarRenderer">
-			<component-family>org.openntf.xsp.extlib.UIProgress</component-family>
-			<renderer-type>org.openntf.xsp.extlib.xsp.UIProgress</renderer-type>
-			<renderer-class>org.openntf.xsp.extlib.renderkit.UIProgressRenderer</renderer-class>
+		<renderer id="StackOverflowBadgeRenderer">
+			<component-family>org.openntf.xsp.extlib.UIStackOverflowBadge</component-family>
+			<renderer-type>org.openntf.xsp.extlib.xsp.UIStackOverflowBadge</renderer-type>
+			<renderer-class>org.openntf.xsp.extlib.renderkit.UIStackOverflowBadgeRenderer</renderer-class>
 		</renderer>
 	</render-kit>
 </faces-config>

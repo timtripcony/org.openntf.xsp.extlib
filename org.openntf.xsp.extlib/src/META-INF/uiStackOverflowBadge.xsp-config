@@ -22,13 +22,13 @@
 		<default-prefix>openntf</default-prefix>
 	</faces-config-extension>
 		<component>
-		<description>Generates a progress bar</description>
-		<display-name>Progress Bar</display-name>
-		<component-type>org.openntf.xsp.extlib.UIProgress</component-type>
-		<component-class>org.openntf.xsp.extlib.components.UIProgress</component-class>
+		<description>Generates a Stack Overflow style badge</description>
+		<display-name>Stack Overflow Badge</display-name>
+		<component-type>org.openntf.xsp.extlib.UIStackOverflowBadge</component-type>
+		<component-class>org.openntf.xsp.extlib.components.UIStackOverflowBadge</component-class>
 		<component-extension>
-			<tag-name>progress</tag-name>
-			<component-family>org.openntf.xsp.extlib.UIProgress</component-family>
+			<tag-name>badge</tag-name>
+			<component-family>org.openntf.xsp.extlib.UIStackOverflowBadge</component-family>
 			<designer-extension>
 				<in-palette>true</in-palette>
 				<category>Czarnowski Library</category>
@@ -36,57 +36,52 @@
 			</designer-extension>
 		</component-extension>
 		<property>
-			<description>The type of progress bar</description>
-			<display-name>Progress Bar Type</display-name>
-			<property-name>barType</property-name>
+			<description>The color of the badge</description>
+			<display-name>Badge Color</display-name>
+			<property-name>badgeColor</property-name>
 			<property-class>string</property-class>
 			<property-extension>
 				<designer-extension>
-					<category>Progress Bar</category>
+					<category>Badge</category>
 					<editor>com.ibm.workplace.designer.property.editors.comboParameterEditor</editor>
-					<editor-parameter>None&#xd;
-Info&#xd;
-Success&#xd;
-Warning&#xd;
-Danger</editor-parameter>
-					<default-value>None</default-value>
+					<editor-parameter>gold&#xd;
+silver&#xd;
+bronze</editor-parameter>
+					<default-value>bronze</default-value>
 				</designer-extension>
 				 <required>true</required>
 			</property-extension>
 		</property>
 		<property>
 			<description>
-				The style of the progress bar			
+				The text to display in the badge			
 			</description>
-			<display-name>Progress Bar Style</display-name>
-			<property-name>barStyle</property-name>
+			<display-name>Badge Text</display-name>
+			<property-name>badgeText</property-name>
 			<property-class>java.lang.String</property-class>
 			<property-extension>
 				<designer-extension>
-					<category>Progress Bar</category>
-					<editor>com.ibm.workplace.designer.property.editors.comboParameterEditor</editor>
-					<editor-parameter>Plain&#xd;
-Striped&#xd;
-Active</editor-parameter>
-					<default-value>Plain</default-value>
+					<category>Badge</category>
 				</designer-extension>
 				 <required>true</required>
 			</property-extension>
 		</property>
 		
 		<property>
-			<description>
-				The width of the progress bar			
+		<description>
+				Should the badge have a silver background			
 			</description>
-			<display-name>Progress Bar Width</display-name>
-			<property-name>barWidth</property-name>
-			<property-class>java.lang.String</property-class>
-			<property-extension>
-				<designer-extension>
-					<category>Progress Bar</category>
-				</designer-extension>
-				 <required>true</required>
-			</property-extension>
-		</property>
+      <property-name>badgeType</property-name>
+      <property-class>boolean</property-class>
+      <display-name>Use Tag Style Badge</display-name>
+      <property-extension>
+        <designer-extension>
+          <editor>com.ibm.std.Boolean</editor>
+          <default-value>false</default-value>
+          <category>Badge</category>
+        </designer-extension>
+        <required>true</required>
+      </property-extension>
+    </property>
 	</component>
 </faces-config>

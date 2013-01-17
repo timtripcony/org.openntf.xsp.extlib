@@ -167,50 +167,6 @@
 		</component-extension>
 	</component>
 	
-	<component>
-		<description>Generates a ribbon in the upper left corner of the containing control</description>
-		<display-name>Corner Ribbon</display-name>
-		<component-type>org.openntf.xsp.extlib.UIRibbon</component-type>
-		<component-class>org.openntf.xsp.extlib.components.UIRibbon</component-class>
-		<component-extension>
-			<tag-name>ribbon</tag-name>
-			<component-family>org.openntf.xsp.extlib.UIRibbon</component-family>
-			<designer-extension>
-				<in-palette>true</in-palette>
-				<category>OpenNTF ExtLib</category>
-				<visible>true</visible>
-			</designer-extension>
-		</component-extension>
-		<property>
-			<description>The color of the ribbon</description>
-			<display-name>Ribbon Color</display-name>
-			<property-name>ribbonColor</property-name>
-			<property-class>string</property-class>
-			<property-extension>
-				<designer-extension>
-					<category>Ribbon</category>
-					<editor>com.ibm.workplace.designer.property.editors.comboParameterEditor</editor>
-					<editor-parameter>Red&#xd;
-Yellow&#xd;
-Green&#xd;
-Blue</editor-parameter>
-					<default-value>Blue</default-value>
-				</designer-extension>
-			</property-extension>
-		</property>
-		<property>
-			<description>
-				The text to display in the ribbon			
-			</description>
-			<display-name>Ribbon Text</display-name>
-			<property-name>ribbonText</property-name>
-			<property-class>java.lang.String</property-class>
-			<property-extension>
-				<designer-extension>
-					<category>Ribbon</category>
-				</designer-extension>
-			</property-extension>
-		</property>
-	</component>
+
 	
 </faces-config>

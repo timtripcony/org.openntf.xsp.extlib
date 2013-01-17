@@ -18,10 +18,10 @@
 	<!-- ******************************************************************* -->
 <faces-config>
 	<render-kit>		
-		<renderer id="ProgressBarRenderer">
-			<component-family>org.openntf.xsp.extlib.UIProgress</component-family>
-			<renderer-type>org.openntf.xsp.extlib.xsp.UIProgress</renderer-type>
-			<renderer-class>org.openntf.xsp.extlib.renderkit.UIProgressRenderer</renderer-class>
+		<renderer id="CornerRibbonRenderer">
+			<component-family>org.openntf.xsp.extlib.UIRibbon</component-family>
+			<renderer-type>org.openntf.xsp.extlib.xsp.UIRibbon</renderer-type>
+			<renderer-class>org.openntf.xsp.extlib.renderkit.UIRibbonRenderer</renderer-class>
 		</renderer>
 	</render-kit>
 </faces-config>
