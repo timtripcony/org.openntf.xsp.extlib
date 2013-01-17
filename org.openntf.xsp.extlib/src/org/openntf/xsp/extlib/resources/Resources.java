@@ -31,6 +31,9 @@ public class Resources {
 	public static final StyleSheetResource openntfStyleSheet1 = new StyleSheetResource(ResourceProvider.RESOURCE_PATH
 			+ "styles/openntfstyle1.css");
 	public static final StyleSheetResource uiRibbonStyle = new StyleSheetResource(ResourceProvider.RESOURCE_PATH + "styles/ribbon.css");
+	public static final StyleSheetResource uiProgress = new StyleSheetResource(ResourceProvider.RESOURCE_PATH + "styles/progress.css");
+	public static final StyleSheetResource uiIOSBadge = new StyleSheetResource(ResourceProvider.RESOURCE_PATH + "styles/iosb.css");
+	public static final StyleSheetResource czaruiBadges = new StyleSheetResource(ResourceProvider.RESOURCE_PATH + "styles/badges.css");
 	
 	public static final ScriptResource openntfClientLibrary1 = new ScriptResource(ResourceProvider.RESOURCE_PATH + "js/openntfLibrary1.js",
 			true);
