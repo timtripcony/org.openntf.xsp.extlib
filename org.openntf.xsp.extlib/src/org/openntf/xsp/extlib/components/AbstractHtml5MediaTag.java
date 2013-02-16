@@ -170,6 +170,21 @@ public class AbstractHtml5MediaTag extends AbstractHtmlTag {
 		properties[idx++] = this.onemptied;
 		properties[idx++] = this.onended;
 		properties[idx++] = this.onerror;
+		properties[idx++] = this.onloadeddata;
+		properties[idx++] = this.onloadedmetadata;
+		properties[idx++] = this.onloadstart;
+		properties[idx++] = this.onpause;
+		properties[idx++] = this.onplay;
+		properties[idx++] = this.onplaying;
+		properties[idx++] = this.onprogress;
+		properties[idx++] = this.onratechange;
+		properties[idx++] = this.onseeked;
+		properties[idx++] = this.onseeking;
+		properties[idx++] = this.onstalled;
+		properties[idx++] = this.onsuspend;
+		properties[idx++] = this.ontimeupdate;
+		properties[idx++] = this.onvolumechange;
+		properties[idx++] = this.onwaiting;
 		return properties;
 	}
 
