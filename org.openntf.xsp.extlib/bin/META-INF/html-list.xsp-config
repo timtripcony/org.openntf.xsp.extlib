@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 	<!-- ******************************************************************* -->
 	<!--                                                                     -->
-	<!-- © Copyright OpenNTF 2013                                            -->
+	<!-- ï¿½ Copyright OpenNTF 2013                                            -->
 	<!--                                                                     -->
 	<!-- Licensed under the Apache License, Version 2.0 (the "License");     -->
 	<!-- you may not use this file except in compliance with the License.    -->
@@ -21,20 +21,42 @@
 		<namespace-uri>http://openntf.org/p/Community%20Control%20Library</namespace-uri>
 		<default-prefix>openntf</default-prefix>
 	</faces-config-extension>
-	<component
-		id="OpenNTFComponent">
-		<description>Displays OpenNTF logo on Xpage</description>
-		<display-name>OpenNTF Logo</display-name>
-		<component-type>org.openntf.xsp.extlib.components.OpenNTFComponent</component-type>
-		<component-class>org.openntf.xsp.extlib.components.OpenNTFComponent</component-class>
+	<component id="HtmlList">
+		<description>This is an HTML list ("UL")</description>
+		<display-name>HTML List</display-name>
+		<component-type>org.openntf.xsp.extlib.components.HtmlList</component-type>
+		<component-class>org.openntf.xsp.extlib.components.HtmlList</component-class>
+		<group-type-ref>org.openntf.xsp.group.html.common</group-type-ref>
 		<component-extension>
 			<component-family>org.openntf.xsp.extlib</component-family>
-			<base-component-type>com.ibm.xsp.UIOutputEx</base-component-type>
-			<tag-name>OpenNTF</tag-name>
-			<renderer-type>org.openntf.xsp.extlib.renderkit.OpenNTFRenderer</renderer-type>
+			<tag-name>htmlList</tag-name>
+			<renderer-type>org.openntf.xsp.extlib.HtmlList</renderer-type>
 			<designer-extension>
 				<in-palette>true</in-palette>
-				<category>OpenNTF Starter Kit</category>
+				<category>HTML Tags</category>
+			</designer-extension>
+		</component-extension>
+		<property id="ordered">
+			<description>Specify if this is an ordered list. Defaults to false.</description>
+			<display-name>Ordered List</display-name>
+            <property-name>ordered</property-name>
+			<property-class>java.lang.Boolean</property-class>
+		</property>
+	</component>
+
+	<component id="HtmlListItem">
+		<description>This is an HTML list item ("LI")</description>
+		<display-name>HTML List Item</display-name>
+		<component-type>org.openntf.xsp.extlib.components.HtmlListItem</component-type>
+		<component-class>org.openntf.xsp.extlib.components.HtmlListItem</component-class>
+		<group-type-ref>org.openntf.xsp.group.html.common</group-type-ref>
+		<component-extension>
+			<component-family>org.openntf.xsp.extlib</component-family>
+			<tag-name>htmlListItem</tag-name>
+			<renderer-type>org.openntf.xsp.extlib.HtmlListItem</renderer-type>
+			<designer-extension>
+				<in-palette>true</in-palette>
+				<category>HTML Tags</category>
 			</designer-extension>
 		</component-extension>
 	</component>

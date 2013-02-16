@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 	<!-- ******************************************************************* -->
 	<!--                                                                     -->
-	<!-- © Copyright OpenNTF 2013                                            -->
+	<!-- � Copyright OpenNTF 2013                                            -->
 	<!--                                                                     -->
 	<!-- Licensed under the Apache License, Version 2.0 (the "License");     -->
 	<!-- you may not use this file except in compliance with the License.    -->
@@ -18,10 +18,16 @@
 	<!-- ******************************************************************* -->
 <faces-config>
 	<render-kit>
-		<renderer id="CanvasRenderer">
-			<component-family>com.ibm.xsp.Tag</component-family>
-			<renderer-type>org.openntf.xsp.Canvas</renderer-type>
-			<renderer-class>org.openntf.xsp.extlib.renderkit.HtmlCanvasRenderer</renderer-class>
+		<renderer id="HtmlList">
+			<component-family>org.openntf.xsp.extlib</component-family>
+			<renderer-type>org.openntf.xsp.extlib.HtmlList</renderer-type>
+			<renderer-class>org.openntf.xsp.extlib.renderkit.HtmlListRenderer</renderer-class>
+		</renderer>
+		
+		<renderer id="HtmlListItem">
+			<component-family>org.openntf.xsp.extlib</component-family>
+			<renderer-type>org.openntf.xsp.extlib.HtmlListItem</renderer-type>
+			<renderer-class>org.openntf.xsp.extlib.renderkit.HtmlListItemRenderer</renderer-class>
 		</renderer>
 	</render-kit>
 </faces-config>
