@@ -1,10 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?><?pde version="3.6"?><target includeMode="feature" name="XPages Plugin Target" sequenceNumber="108">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?pde version="3.8"?><target includeMode="feature" name="XPages Plugin Target" sequenceNumber="114">
 <locations>
-<location path="${rcp_data}\applications\eclipse" type="Directory"/>
 <location path="${rcp_target}" type="Profile"/>
+<location path="${rcp_data}/applications/eclipse" type="Directory"/>
 </locations>
 <environment>
-<os>win32</os>
+<os>linux</os>
 <ws>win32</ws>
 <arch>x86</arch>
 </environment>
