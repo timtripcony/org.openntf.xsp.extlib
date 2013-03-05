@@ -34,6 +34,16 @@
 	id="PhaseListener">
 		<phase-listener>org.openntf.xsp.extlib.listeners.PhaseListener</phase-listener>
 	</lifecycle>
+  <!-- Phase Listener -->
+  <lifecycle>
+    <phase-listener>org.openntf.extlib.listeners.OpenLogPhaseListener</phase-listener>
+  </lifecycle>
+  <!-- Managed bean -->
+  <managed-bean>
+    <managed-bean-name>openLogBean</managed-bean-name>
+    <managed-bean-class>org.openntf.xsp.extlib.beans.OpenLogErrorHolder</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
 <managed-bean
 	id="ApplicationBean">
 		<managed-bean-name>OpenNTFApplication</managed-bean-name>
