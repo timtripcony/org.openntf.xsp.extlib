@@ -71,6 +71,9 @@ public class SudoUtils {
 public static Session getSessionAs(final String userName) {
 	Session result = null;
 	try {
+		/*
+		 * NAPI hack courtesy of Nathan T. Freeman:
+		 */
 		result = AccessController.doPrivileged(new PrivilegedExceptionAction<lotus.domino.Session>() {
 			public lotus.domino.Session run() throws Exception {
 				long hList = NotesUtil.createUserNameList(userName);
