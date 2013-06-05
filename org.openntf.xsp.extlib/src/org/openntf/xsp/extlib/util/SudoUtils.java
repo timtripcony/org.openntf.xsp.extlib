@@ -15,28 +15,71 @@
  */
 package org.openntf.xsp.extlib.util;
 
-import lotus.domino.NotesFactory;
-import lotus.domino.NotesThread;
+import java.security.AccessController;
+import java.security.PrivilegedExceptionAction;
+import java.util.Map;
+import javax.faces.context.FacesContext;
+import javax.faces.el.MethodBinding;
 import lotus.domino.Session;
+import com.ibm.domino.napi.c.NotesUtil;
+import com.ibm.domino.napi.c.xsp.XSPNative;
+import com.ibm.xsp.extlib.util.ExtLibUtil;
+import com.ibm.xsp.util.FacesUtil;
 
 public class SudoUtils {
-
 	public interface SudoCallback {
 		public Object run(Session session);
+
+		public Object onException(Exception e);
+	}
+
+	public static Object runOnBehalfOf(final String userName, final MethodBinding callback) {
+		return runOnBehalfOf(userName, new SudoCallback() {
+			public Object run(Session session) {
+				Object methodResult = null;
+				try {
+					methodResult = callback.invoke(FacesContext.getCurrentInstance(), null);
+				} catch (Exception e) {
+					onException(e);
+				}
+				return methodResult;
+			}
+
+			public Object onException(Exception e) {
+				e.printStackTrace();
+				return null;
+			}
+		});
 	}
 
 	public static Object runOnBehalfOf(String userName, SudoCallback callback) {
 		Object result = null;
+		Map<String, Object> requestScope = ExtLibUtil.getRequestScope();
 		try {
-			NotesThread.sinitThread();
-			Session s = NotesFactory.createSession((String) null, userName, "");
+			Session s = getSessionAs(userName);
+			requestScope.put("sessionAsSudo", s);
 			result = callback.run(s);
 		} catch (Exception e) {
-			e.printStackTrace();
+			FacesUtil.addErrorMessage(e.getMessage(), e.getMessage());
+			result = callback.onException(e);
 		} finally {
-			NotesThread.stermThread();
+			requestScope.remove("sessionAsSudo");
 		}
 		return result;
 	}
 
+public static Session getSessionAs(final String userName) {
+	Session result = null;
+	try {
+		result = AccessController.doPrivileged(new PrivilegedExceptionAction<lotus.domino.Session>() {
+			public lotus.domino.Session run() throws Exception {
+				long hList = NotesUtil.createUserNameList(userName);
+				return XSPNative.createXPageSession(userName, hList, true, false);
+			}
+		});
+	} catch (Exception e) {
+		result = ExtLibUtil.getCurrentSession();
+	}
+	return result;
+}
 }

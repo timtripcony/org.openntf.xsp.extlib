@@ -40,4 +40,5 @@ Export-Package: org.openntf.xsp.extlib,
  org.openntf.xsp.extlib.ssjs,
  org.openntf.xsp.extlib.util
 Require-Bundle: com.ibm.xsp.designer;bundle-version="8.5.2";visibility:=reexport,
- com.ibm.xsp.extlib;visibility:=reexport
+ com.ibm.xsp.extlib;visibility:=reexport,
+ com.ibm.domino.napi;bundle-version="9.0.0"
