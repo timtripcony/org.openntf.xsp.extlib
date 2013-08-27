@@ -17,17 +17,35 @@ package org.openntf.xsp.extlib.util;
 
 import java.net.URL;
 import java.util.Enumeration;
-
 import javax.faces.context.FacesContext;
-
+import lotus.domino.NotesException;
 import org.osgi.framework.Bundle;
+import com.ibm.xsp.application.ApplicationEx;
+import com.ibm.xsp.extlib.util.ExtLibUtil;
 
 public class LibraryUtils {
 	// methods copied mostly from ExtLibUtils to avoid dependency
-
 	public static Object resolveVariable(FacesContext facesContext, String name) {
 		Object value = facesContext.getApplication().getVariableResolver().resolveVariable(facesContext, name);
 		return value;
+	}
+
+	public static String getXspProperty(String propertyName, String defaultValue) {
+		String retVal = ApplicationEx.getInstance().getApplicationProperty(propertyName, getIniVar(propertyName, defaultValue));
+		return retVal;
+	}
+
+	public static String getIniVar(String propertyName, String defaultValue) {
+		try {
+			String newVal = ExtLibUtil.getCurrentSession().getEnvironmentString(propertyName, true);
+			if (!"".equals(newVal)) {
+				return newVal;
+			} else {
+				return defaultValue;
+			}
+		} catch (NotesException e) {
+			return defaultValue;
+		}
 	}
 
 	public static URL getResourceURL(Bundle bundle, String path) {
